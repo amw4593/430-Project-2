@@ -2,6 +2,8 @@ const models = require('../models');
 
 const { Post } = models;
 
+const postPage = async (req, res) => res.render('app');
+
 // Controller function to handle creating a new post
 const createPost = async (req, res) => {
   const { content } = req.body;
@@ -31,6 +33,7 @@ const getPosts = async (req, res) => {
 };
 
 module.exports = {
+  postPage,
   createPost,
   getPosts,
 };

@@ -1,24 +1,26 @@
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="utf-8"/>
-  <title>To-Do</title>
-  <link rel="shortcut icon" href="/assets/img/favicon.png"/>
-  <link rel="stylesheet" type="text/css" href="/assets/styles.scss"/>
+    <title>Post App</title>
+    <link rel="stylesheet" type="text/css" href="/hosted/styles.css"/>
 </head>
 <body>
-  <nav><a href="/login"><img id="logo" src="/assets/img/face.png" alt="face logo"/></a>
-    <div class="navlink"><a href="/logout">Log out</a></div>
-  </nav>
+    <div id="app"></div>
+    <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
 
-  <section id="app">
+    <script src="/hosted/bundle.js" type="text/babel"></script>
 
-  </section>
 
-  <div id="domoMessage" class='hidden'>
-    <img id="speech" src="/assets/img/speech.png" alt="speech box"/>
-    <h3><span id="errorMessage"></span></h3>
-    <img id="domo" src="assets/img/domo.png" alt="domo"/>
-  </div>
-  <script src="/assets/appBundle.js"></script>
+    <div id="postForm">
+        <form id="createPostForm" action="/createPost" method="POST">
+            <label for="postContent">Share your thoughts:</label>
+            <textarea id="postContent" name="content" rows="4" cols="50" placeholder="Write something..."></textarea>
+            <button type="submit">Post</button>
+        </form>
+    </div>
+
+</script>
 </body>
 </html>
