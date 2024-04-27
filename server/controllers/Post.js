@@ -25,7 +25,7 @@ const createPost = async (req, res) => {
 const getPosts = async (req, res) => {
   try {
     const posts = await Post.find();
-    return res.status(200).json({ posts });
+    return res.render('posts', { posts });
   } catch (err) {
     console.error('Error fetching posts:', err);
     return res.status(500).json({ error: 'An error occurred while fetching posts.' });

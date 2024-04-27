@@ -70,11 +70,23 @@ const PostList = (props) => {
     );
 };
 
+const PremiumButton = ({ onClick }) => {
+    return (
+        <button onClick={onClick}>Premium</button>
+    );
+};
+
 const App = () => {
     const [reloadPosts, setReloadPosts] = useState(false);
 
+    const handlePremiumClick = () => {
+        console.log("Premium feature activated!");
+    };
+
     return (
         <div>
+            <PremiumButton onClick={handlePremiumClick} />
+            
             <div id="makePost">
                 <PostForm triggerReload={() => setReloadPosts(!reloadPosts)} />
             </div>

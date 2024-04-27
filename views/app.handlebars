@@ -23,11 +23,28 @@
         </form>
     </div>
 
-    <div id="premiumButton">
-        <button>Go Premium</button>
+    <div id="changePasswordForm">
+        <form id="changePasswordForm" action="/change-password" method="POST">
+            <label for="oldPass">Old Password:</label>
+            <input id="oldPass" type="password" name="oldPassword" placeholder="Old Password" /><br>
+            <label for="newPass">New Password:</label>
+            <input id="newPass" type="password" name="newPassword" placeholder="New Password" /><br>
+            <label for="confirmPass">Confirm New Password:</label>
+            <input id="confirmPass" type="password" name="confirmPassword" placeholder="Confirm New Password" /><br>
+            <button type="submit">Change Password</button>
+        </form>
     </div>
 
-    </script>
+    <div id="posts">
+        <h2>My Posts</h2>
+        <ul>
+            {{#each posts}}
+            <li>{{this}}</li>
+            {{/each}}
+        </ul>
+    </div>
+
+
 </body>
 
 </html>

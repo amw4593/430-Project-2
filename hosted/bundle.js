@@ -28,6 +28,7 @@
     window.onload = () => {
         const signupForm = document.getElementById("signupForm");
         const loginForm = document.getElementById("loginForm");
+        const changePasswordForm = document.getElementById("changePasswordForm");
         const postForm = document.getElementById("postForm");
         const errorMessage = document.getElementById("errorMessage");
 
@@ -61,7 +62,26 @@
             handleSubmit(loginForm.getAttribute("action"), { username, password });
             return false;
         });
-
+        changePasswordForm && changePasswordForm.addEventListener("submit", async event => {
+            event.preventDefault();
+            errorMessage.classList.add("hidden");
+        
+            const oldPassword = changePasswordForm.querySelector("#oldPass").value;
+            const newPassword = changePasswordForm.querySelector("#newPass").value;
+            const confirmPassword = changePasswordForm.querySelector("#confirmPass").value;
+    
+            if (!oldPassword || !newPassword || !confirmPassword) {
+                showError("All fields are required!");
+                return false;
+            }
+            if (newPassword !== confirmPassword) {
+                showError("Passwords do not match!");
+                return false;
+            }
+            handleSubmit(changePasswordForm.getAttribute("action"), { oldPassword, newPassword, confirmPassword });
+        
+            return false;
+        });
         postForm && postForm.addEventListener("submit", async event => {
             event.preventDefault();
             errorMessage.classList.add("hidden");
