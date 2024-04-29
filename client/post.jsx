@@ -86,6 +86,8 @@ const App = () => {
     return (
         <div>
             <PremiumButton onClick={handlePremiumClick} />
+
+            {showImage && <img src="\hosted\img\google-ad-mockup.png" alt="Ad Mockup" />}
             
             <div id="makePost">
                 <PostForm triggerReload={() => setReloadPosts(!reloadPosts)} />
