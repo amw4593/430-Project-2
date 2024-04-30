@@ -13,8 +13,8 @@ const createPost = async (req, res) => {
   }
 
   try {
-    const newPost = await Post.create({ content });
-    return res.status(201).json(newPost);
+    await Post.create({ content });
+    return res.redirect('/post');
   } catch (err) {
     console.error('Error creating post:', err);
     return res.status(500).json({ error: 'An error occurred while creating the post.' });

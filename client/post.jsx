@@ -78,6 +78,16 @@ const PremiumButton = ({ onClick }) => {
 
 const App = () => {
     const [reloadPosts, setReloadPosts] = useState(false);
+    const [posts, setPosts] = useState([]);
+
+    useEffect(() => {
+        const loadPostsFromServer = async () => {
+            const response = await fetch('/getPosts');
+            const data = await response.json();
+            setPosts(data.posts);
+        };
+        loadPostsFromServer();
+    }, [reloadPosts]);
 
     const handlePremiumClick = () => {
         console.log("Premium feature activated!");
@@ -86,8 +96,6 @@ const App = () => {
     return (
         <div>
             <PremiumButton onClick={handlePremiumClick} />
-
-            {showImage && <img src="\hosted\img\google-ad-mockup.png" alt="Ad Mockup" />}
             
             <div id="makePost">
                 <PostForm triggerReload={() => setReloadPosts(!reloadPosts)} />

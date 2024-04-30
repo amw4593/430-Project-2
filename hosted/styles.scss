@@ -93,3 +93,22 @@ form {
     box-sizing: border-box;
   }
 }
+
+// Welcome Message
+.welcome-message {
+  margin: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  h2 {
+    color: $primary-color;
+    margin-bottom: 10px;
+  }
+  p {
+    color: $text-color;
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+}
+

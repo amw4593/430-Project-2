@@ -19,8 +19,6 @@
     <script src="/hosted/bundle.js" type="text/babel"></script>
     <script src="/hosted/appBundle.js" type="text/babel"></script>
 
-    <button id="premiumButton">Premium</button>
-
     <div id="postForm">
         <form id="createPostForm" action="/createPost" method="POST">
             <label for="postContent">Share your thoughts:</label>
@@ -32,13 +30,12 @@
     <div id="posts">
         <h2>My Posts</h2>
         <ul>
-            {{#each post}}
-            <li>{{this}}</li>
+            {{#each posts}}
+            <li>{{this.content}}</li>
             {{/each}}
         </ul>
     </div>
-
-<!--change the "this" part, check list items to see if they are empty, or is post.find working properly--> 
+        <button id="premiumButton">Access Premium To View Your Posts</button>
 </body>
 
 </html>

@@ -21,10 +21,6 @@ nav {
   justify-content: space-between;
   align-items: center;
 }
-nav img#logo {
-  height: 40px;
-  width: auto;
-}
 nav .navlink {
   margin-left: 10px;
 }
@@ -85,6 +81,23 @@ form button:hover {
   border: 1px solid #ccc;
   border-radius: 5px;
   box-sizing: border-box;
+}
+
+.welcome-message {
+  margin: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.welcome-message h2 {
+  color: #3498db;
+  margin-bottom: 10px;
+}
+.welcome-message p {
+  color: #333;
+  margin-bottom: 10px;
+  line-height: 1.5;
 }
 
 /*# sourceMappingURL=styles.css.map */
