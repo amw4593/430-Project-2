@@ -1,13 +1,13 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f1f1f1;
-  color: #333;
+  background-color: #f9f9f9;
+  color: #444;
   margin: 0;
   padding: 0;
 }
 
 a {
-  color: #3498db;
+  color: #4CAF50;
   text-decoration: none;
 }
 a:hover {
@@ -15,7 +15,7 @@ a:hover {
 }
 
 nav {
-  background-color: #3498db;
+  background-color: #4CAF50;
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
@@ -29,6 +29,11 @@ nav .navlink a {
 }
 nav .navlink a:hover {
   text-decoration: underline;
+}
+
+#logo {
+  width: 100px;
+  height: auto;
 }
 
 form {
@@ -47,23 +52,43 @@ form textarea {
   border: 1px solid #ccc;
   border-radius: 5px;
   box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+form input[type=text]:focus,
+form input[type=password]:focus,
+form textarea:focus {
+  border-color: #4CAF50;
 }
 form button {
   padding: 10px 20px;
-  background-color: #3498db;
+  background-color: #4CAF50;
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 form button:hover {
-  background-color: #217dbb;
+  background-color: #3d8b40;
+}
+
+#premiumButton {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+#premiumButton:hover {
+  background-color: #3d8b40;
 }
 
 #postMessage {
   margin: 20px;
   padding: 10px;
-  background-color: #2ecc71;
+  background-color: #FF5722;
   color: #fff;
   border-radius: 5px;
 }
@@ -81,6 +106,10 @@ form button:hover {
   border: 1px solid #ccc;
   border-radius: 5px;
   box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+#postForm textarea:focus {
+  border-color: #4CAF50;
 }
 
 .welcome-message {
@@ -91,11 +120,11 @@ form button:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 .welcome-message h2 {
-  color: #3498db;
+  color: #4CAF50;
   margin-bottom: 10px;
 }
 .welcome-message p {
-  color: #333;
+  color: #444;
   margin-bottom: 10px;
   line-height: 1.5;
 }

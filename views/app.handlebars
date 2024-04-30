@@ -7,9 +7,15 @@
 </head>
 
 <body>
-    <nav><a href="/login"><img id="logo" src="/hosted/img/Logo.png" alt="face logo" /></a>
+    <nav><a href="/login"><img id="logo" src="/hosted/img/Logo.png" alt="face logo"  /></a>
         <div id="changePasswordForm">
             <form id="changePasswordForm" action="/change-password" method="POST">
+                <label for="oldPassword">Old Password: </label>
+                <input id="oldPassword" type="password" name="oldPassword" placeholder="Old Password" /><br>
+                <label for="newPassword">New Password: </label>
+                <input id="newPassword" type="password" name="newPassword" placeholder="New Password" /><br>
+                <label for="confirmPassword">Confirm New Password: </label>
+                <input id="confirmPassword" type="password" name="confirmPassword" placeholder="Confirm New Password" /><br>
                 <button type="submit">Change Password</button>
             </form>
         </div>

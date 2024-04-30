@@ -124,6 +124,7 @@ const init = () => {
     const loginButton = document.getElementById('loginButton');
     const signupButton = document.getElementById('signupButton');
     const changePasswordButton = document.getElementById('changePasswordButton');
+    const changePasswordSelect = document.getElementById('changePasswordSelect');
 
     const root = createRoot(document.getElementById('content'));
 
@@ -141,7 +142,10 @@ const init = () => {
 
     changePasswordButton.addEventListener('click', (e) => {
         e.preventDefault();
-        root.render(<ChangePasswordWindow />);
+        const selectedValue = changePasswordSelect.value;
+        if (selectedValue === 'changePassword') {
+            root.render(<ChangePasswordWindow />);
+        }
         return false;
     });
 

@@ -11,8 +11,6 @@ const router = (app) => {
 
   app.get('/logout', mid.requiresLogin, controllers.Account.logout);
 
-  // Router for fetching posts from the server
-
   // Router for creating a new post
   app.get('/post', mid.requiresLogin, controllers.Post.postPage);
   app.post('/createPost', mid.requiresLogin, controllers.Post.createPost);
