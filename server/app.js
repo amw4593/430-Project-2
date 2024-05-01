@@ -14,7 +14,7 @@ const redis = require('redis');
 const router = require('./router.js');
 
 const port = process.env.PORT || process.env.NODE_PORT || 3000;
-
+// Mongoose connection
 const dbURI = process.env.MONGODB_URI || 'mongodb://127.0.0.1/';
 mongoose.connect(dbURI).catch((err) => {
   if (err) {
@@ -22,7 +22,7 @@ mongoose.connect(dbURI).catch((err) => {
     throw err;
   }
 });
-
+// Functions for connecting with Redis
 const redisClient = redis.createClient({
   url: process.env.REDISCLOUD_URL,
 });

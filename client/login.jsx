@@ -2,6 +2,7 @@ const helper = require('./helper.js');
 const React = require('react');
 const { createRoot } = require('react-dom/client');
 
+//These are all the handler function for login, signup and changePassword
 const handleLogin = (e) => {
     e.preventDefault();
     helper.hideError();
@@ -39,7 +40,7 @@ const handleSignup = (e) => {
     helper.sendPost(e.target.action, { username, pass, pass2 });
     return false;
 }
-
+//Couldn't get chnagePassword to work correctly
 const handleChangePassword = (e) => {
     e.preventDefault();
     helper.hideError();
@@ -61,7 +62,7 @@ const handleChangePassword = (e) => {
     helper.sendPost(e.target.action, { oldPassword, newPassword, confirmPassword });
     return false;
 }
-
+//These set up all the windows for login, signup, and change password
 const LoginWindow = (props) => {
     return (
         <form id="loginForm"
@@ -120,11 +121,11 @@ const ChangePasswordWindow = (props) => {
     );
 };
 
+//Initiallization of all the windows created
 const init = () => {
     const loginButton = document.getElementById('loginButton');
     const signupButton = document.getElementById('signupButton');
     const changePasswordButton = document.getElementById('changePasswordButton');
-    const changePasswordSelect = document.getElementById('changePasswordSelect');
 
     const root = createRoot(document.getElementById('content'));
 
@@ -142,10 +143,7 @@ const init = () => {
 
     changePasswordButton.addEventListener('click', (e) => {
         e.preventDefault();
-        const selectedValue = changePasswordSelect.value;
-        if (selectedValue === 'changePassword') {
-            root.render(<ChangePasswordWindow />);
-        }
+        root.render(<ChangePasswordWindow />);
         return false;
     });
 

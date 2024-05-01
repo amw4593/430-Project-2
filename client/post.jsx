@@ -3,7 +3,7 @@ const React = require('react');
 const { useState, useEffect } = React;
 const { createRoot } = require('react-dom/client');
 
-
+//Handler for posting messages
 const handlePost = (e, onPostAdded) => {
     e.preventDefault();
     helper.hideError();
@@ -18,7 +18,7 @@ const handlePost = (e, onPostAdded) => {
     helper.sendPost(e.target.action, { content }, onPostAdded);
     return false;
 };
-
+//Generates the template for the posing form
 const PostForm = (props) => {
     return (
         <form id="postForm"
@@ -28,13 +28,13 @@ const PostForm = (props) => {
             method="POST"
             className="postForm"
         >
-            <label htmlFor="content">Share your To-Do List:</label>
+            <label htmlFor="content">Share your Thoughts:</label>
             <textarea id="postContent" name="content" rows="4" cols="50" placeholder="Write something..." />
             <input className="postSubmit" type="submit" value="Post" />
         </form>
     );
 };
-
+//Retrieves and showcases the posts when you subscribe to the premium version
 const PostList = (props) => {
     const [posts, setPosts] = useState(props.posts);
 
@@ -69,13 +69,13 @@ const PostList = (props) => {
         </div>
     );
 };
-
+//Creates the premium button
 const PremiumButton = ({ onClick }) => {
     return (
         <button onClick={onClick}>Premium</button>
     );
 };
-
+//Loads all post data into the app, also makes the button cycle the image 'ad' and post visibility (neither work)
 const App = () => {
     const [reloadPosts, setReloadPosts] = useState(false);
     const [posts, setPosts] = useState([]);
@@ -100,7 +100,7 @@ const App = () => {
             <PremiumButton onClick={handlePremiumClick} />
             
             {showImage && <img src="/hosted/img/google-ad-mockup.png" alt="Ad Mockup" />}
-            
+
             <div id="makePost">
                 <PostForm triggerReload={() => setReloadPosts(!reloadPosts)} />
             </div>
@@ -110,7 +110,7 @@ const App = () => {
         </div>
     );
 };
-
+//Initializes the App
 const init = () => {
     const root = createRoot(document.getElementById('app'));
     root.render(<App />);
